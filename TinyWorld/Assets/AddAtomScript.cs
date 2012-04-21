@@ -13,6 +13,8 @@ public class AddAtomScript : MonoBehaviour {
 	private Rect _oRect = new Rect(10, 40, 100, 25);
 	private Rect _cRect = new Rect(10, 70, 100, 25);
 	
+	private Rect _resetRect = new Rect(10, 200, 100, 25);
+	
 	public void OnGUI() {
 		if (GUI.Button(_cRect, "Carbon")) {
 			_Create(carbon);
@@ -23,25 +25,35 @@ public class AddAtomScript : MonoBehaviour {
 		if (GUI.Button(_oRect, "Oxygen")) {
 			_Create(oxygen);
 		}
+		if (GUI.Button(_resetRect, "Reset")) {
+			foreach (Transform t in transform) {
+				Destroy(t.gameObject);
+			}
+		}
 	}
-	
+
+	private Transform go;
 	private void _Create(GameObject atom) {
 		var s = selection.selection;
 		if (s == null) {
-			selection.selection = ((GameObject) Instantiate(atom)).transform;
+			selection.selection = _Instantiate(atom);
 			return;
 		}
 		
-		Transform go = ((GameObject) Instantiate(atom)).transform;
-		
 		AtomicLink sal = s.GetComponent<AtomicLink>();
-		AtomicLink goal = go.GetComponent<AtomicLink>();
-		if ((sal.maxLinks > 0) && (goal.maxLinks > 0)) {
-			sal.AddLink(go);
-			goal.AddLink(s);
-		}
+		if (sal.IsFull) return;
 		
-		go.transform.parent = this.transform;
+		Transform go = _Instantiate(atom);
+		
+		AtomicLink goal = go.GetComponent<AtomicLink>();
+		sal.AddLink(go);
+		goal.AddLink(s);
 	}
-	
+
+	private Transform _Instantiate(GameObject atom) {
+		Transform res = ((GameObject) Instantiate(atom)).transform;
+		res.parent = transform;
+		res.position = transform.position + Random.onUnitSphere * 2;
+		return res;
+	}
 }

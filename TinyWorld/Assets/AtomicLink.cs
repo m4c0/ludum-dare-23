@@ -6,26 +6,39 @@ public class AtomicLink : MonoBehaviour {
 	
 	public int maxLinks;
 	
+	private int linkCount = 0;
 	private Rigidbody[] links;
 	
 	private Transform me;
 	
 	public void AddLink(Component obj) {
-		if (maxLinks <= 0) return;
-		links[--maxLinks] = obj.GetComponent<Rigidbody>();
+		if (IsFull) return;
+		if (links == null) {
+			links = new Rigidbody[maxLinks];
+		}
+		links[linkCount++] = obj.GetComponent<Rigidbody>();
 	}
+	
+	public bool IsFull { get { return maxLinks <= linkCount; } }
 	
 	public void Start() {
 		me = GetComponent<Transform>();
-		links = new Rigidbody[maxLinks];
 	}
 
 	public void Update() {
-		foreach (Rigidbody r in links) {
-			if (r == null) continue;
-
+		for (int i = 0; i < linkCount; i++) {
+			Rigidbody r = links[i];
 			var force = me.position - r.position;
 			r.AddForce(force);
+			
+			for (int j = 0; j < linkCount; j++) {
+				if (j == i) continue;
+				
+				Rigidbody r1 = links[j];
+				force = r.position - r1.position;
+				force = force.normalized / (force.magnitude * force.magnitude);
+				r.AddForce(force);
+			}
 		}
 	}
 }

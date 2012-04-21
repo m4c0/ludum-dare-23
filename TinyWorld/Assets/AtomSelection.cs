@@ -3,7 +3,7 @@ using System.Collections;
 
 public class AtomSelection : MonoBehaviour {
 	
-	public GameObject selection;
+	public Transform selection;
 	
 	private bool _Picked() { return selection != null; }
 	
@@ -25,6 +25,6 @@ public class AtomSelection : MonoBehaviour {
 			return;
 		}
 		
-		selection = hit.collider.gameObject;
+		selection = hit.collider.transform;
 	}
 }

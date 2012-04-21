@@ -28,9 +28,20 @@ public class AddAtomScript : MonoBehaviour {
 	private void _Create(GameObject atom) {
 		var s = selection.selection;
 		if (s == null) {
-			selection.selection = (GameObject) Instantiate(atom);
+			selection.selection = ((GameObject) Instantiate(atom)).transform;
 			return;
 		}
+		
+		Transform go = ((GameObject) Instantiate(atom)).transform;
+		
+		AtomicLink sal = s.GetComponent<AtomicLink>();
+		AtomicLink goal = go.GetComponent<AtomicLink>();
+		if ((sal.maxLinks > 0) && (goal.maxLinks > 0)) {
+			sal.AddLink(go);
+			goal.AddLink(s);
+		}
+		
+		go.transform.parent = this.transform;
 	}
 	
 }

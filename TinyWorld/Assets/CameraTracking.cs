@@ -6,7 +6,7 @@ public class CameraTracking : MonoBehaviour {
 	public AtomSelection selector;
 	public float speed = 2.0f;
 
-	private GameObject lerpDontKnowAName;
+	private Transform lerpDontKnowAName;
 	
 	private Vector3 lerpSource;
 	private Vector3 lerpTarget;

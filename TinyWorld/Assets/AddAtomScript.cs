@@ -102,10 +102,16 @@ public class AddAtomScript : MonoBehaviour {
 	private void _Energyze(Transform h, Transform s) {
 		float rand = 0.1f;
 		foreach (ForceRenderer f in h.GetComponentsInChildren<ForceRenderer>()) {
-			if (f.other == s) rand = 0.4f;
+			if (f.other == s) {
+				f.randomness = 0.4f;
+				return;
+			}
 		}
 		foreach (ForceRenderer f in s.GetComponentsInChildren<ForceRenderer>()) {
-			if (f.other == h) rand = 0.4f;
+			if (f.other == h) {
+				f.randomness = 0.4f;
+				return;
+			}
 		}
 		
 		var x = ((GameObject) Instantiate(forceRayPrefab)).GetComponent<ForceRenderer>();

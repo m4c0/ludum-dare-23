@@ -25,7 +25,7 @@ public class HydrogenTutorial4 : MonoBehaviour {
 	public void Update() {
 		time += Time.deltaTime;
 		
-		fade = 1 - (time - 10);
+		fade = 1 - (time - 13);
 		
 		if (Input.GetButton("Jump")) {
 			Application.LoadLevel(nextLevel);

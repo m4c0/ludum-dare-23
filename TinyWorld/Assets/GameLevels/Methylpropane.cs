@@ -1,11 +1,11 @@
 using UnityEngine;
 using System.Collections;
 
-public class Ethane : AbstractLevel {
-
+public class Methylpropane : AbstractLevel {
+	
 	public void Update() {
 		if (won) return;
-		if (transform.childCount != 8) return;
+		if (transform.childCount != 14) return;
 		
 		foreach (Transform c in transform) {
 			AtomicLink a = c.GetComponent<AtomicLink>();
@@ -26,10 +26,28 @@ public class Ethane : AbstractLevel {
 				c = link;
 			}
 		}
-		if (c != null && (hcnt == 3)) _CheckCarbonB(c);
+		if (c != null && (hcnt == 3)) _CheckCarbonB(a, c);
 	}
 	
-	private void _CheckCarbonB(AtomicLink a) {
+	private void _CheckCarbonB(AtomicLink xii, AtomicLink a) {
+		int hcnt = 0;
+		int ccnt = 0;
+		for (int i = 0; i < 4; i++) {
+			var link = a.GetLink(i);
+			if (link == xii) continue;
+			if (link.linkCount == 1) {
+				hcnt++;
+			} else if (link.linkCount == 4) {
+				if (!_CheckCarbonC(link)) return;
+				ccnt++;
+			} else {
+				return;
+			}
+		}
+		if (hcnt == 1 && ccnt == 2) StartCoroutine("_EndLevel");
+	}
+	
+	private bool _CheckCarbonC(AtomicLink a) {
 		int hcnt = 0;
 		for (int i = 0; i < 4; i++) {
 			var link = a.GetLink(i);
@@ -38,8 +56,6 @@ public class Ethane : AbstractLevel {
 			}
 		}
 
-		if (hcnt == 3) {
-			StartCoroutine("_EndLevel");
-		}
+		return (hcnt == 3);
 	}
 }

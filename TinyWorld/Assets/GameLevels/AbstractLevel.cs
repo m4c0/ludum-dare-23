@@ -6,7 +6,7 @@ public class AbstractLevel : MonoBehaviour {
 	public string next;
 	public string description;
 	
-	private bool won = false;
+	protected bool won = false;
 	
 	public void OnGUI() {
 		int y = Screen.height - 30;

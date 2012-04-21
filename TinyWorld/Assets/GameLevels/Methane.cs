@@ -4,6 +4,7 @@ using System.Collections;
 public class Methane : AbstractLevel {
 	
 	public void Update() {
+		if (won) return;
 		if (transform.childCount != 5) return;
 		
 		foreach (Transform c in transform) {

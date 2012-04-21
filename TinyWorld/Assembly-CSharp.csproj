@@ -45,8 +45,11 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\AddAtomScript.cs" />
+     <Compile Include="Assets\AtomLoop.cs" />
      <Compile Include="Assets\AtomSelection.cs" />
+     <Compile Include="Assets\AtomicLink.cs" />
      <Compile Include="Assets\CameraTracking.cs" />
+     <Compile Include="Assets\ElectricCharge.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

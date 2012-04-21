@@ -5,7 +5,7 @@ public class CameraTracking : MonoBehaviour {
 
 	public AtomSelection selector;
 	public float speed = 2.0f;
-
+	
 	private Transform lerpDontKnowAName;
 	
 	private Vector3 lerpSource;
@@ -23,8 +23,9 @@ public class CameraTracking : MonoBehaviour {
 			lerpTime += Time.deltaTime * speed;
 		}
 		lerpTarget = sel.transform.position;
-		
-		transform.position = Vector3.Lerp(lerpSource, lerpTarget, lerpTime); 
+
+		var p = Vector3.Lerp(lerpSource, lerpTarget, lerpTime);
+		transform.position = p;
 	}
 	
 }

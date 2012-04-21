@@ -57,6 +57,9 @@
      <Compile Include="Assets\Levels\HydrogenTutorial2.cs" />
      <Compile Include="Assets\Levels\HydrogenTutorial3.cs" />
      <Compile Include="Assets\Levels\HydrogenTutorial4.cs" />
+     <Compile Include="Assets\Levels\OxygenTutorial1.cs" />
+     <Compile Include="Assets\Levels\OxygenTutorial2.cs" />
+     <Compile Include="Assets\Levels\OxygenTutorial3.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

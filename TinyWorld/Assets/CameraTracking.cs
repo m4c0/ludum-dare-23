@@ -17,12 +17,12 @@ public class CameraTracking : MonoBehaviour {
 		if (sel == null) return;
 		if (sel != lerpDontKnowAName) {
 			lerpTime = 0;
-			lerpTarget = sel.transform.position;
 			lerpSource = transform.position;
 			lerpDontKnowAName = sel;
 		} else {
 			lerpTime += Time.deltaTime * speed;
 		}
+		lerpTarget = sel.transform.position;
 		
 		transform.position = Vector3.Lerp(lerpSource, lerpTarget, lerpTime); 
 	}

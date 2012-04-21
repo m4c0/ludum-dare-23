@@ -3,13 +3,13 @@ using System.Collections;
 
 public class HydrogenTutorial3 : MonoBehaviour {
 	
-	private HydrogenTutorial3 next;
+	private HydrogenTutorial4 next;
 	
 	private float fade = 1;
 	private float time = 0;
 	
 	public void Start() {
-		next = GetComponent<HydrogenTutorial3>();
+		next = GetComponent<HydrogenTutorial4>();
 	}
 	
 	public void OnGUI() {

@@ -30,7 +30,7 @@ public class CarbonTutorial3 : MonoBehaviour {
 		GUI.Label(new Rect(100, 140, 300, 50), "Hover your mouse inside oxygen and click the button that will appear");
 
 		_Alphalulu(6);
-		GUI.Label(new Rect(100, 140, 300, 50), "Remember you can rotate your camera if needed");
+		GUI.Label(new Rect(100, 180, 300, 50), "Remember you can rotate your camera if needed");
 	}
 	
 	private float finish = 10;

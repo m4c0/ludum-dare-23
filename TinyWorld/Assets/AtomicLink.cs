@@ -20,6 +20,10 @@ public class AtomicLink : MonoBehaviour {
 		links[linkCount++] = obj.GetComponent<Rigidbody>();
 	}
 	
+	public AtomicLink GetLink(int i) {
+		return links[i].GetComponent<AtomicLink>();
+	}
+	
 	public bool IsFull { get { return maxLinks <= linkCount; } }
 	
 	public void Start() {

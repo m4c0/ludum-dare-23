@@ -47,9 +47,13 @@
      <Compile Include="Assets\AddAtomScript.cs" />
      <Compile Include="Assets\AtomSelection.cs" />
      <Compile Include="Assets\AtomicLink.cs" />
+     <Compile Include="Assets\BackToMainScreen.cs" />
      <Compile Include="Assets\CameraRotation.cs" />
      <Compile Include="Assets\CameraTracking.cs" />
      <Compile Include="Assets\CameraZoom.cs" />
+     <Compile Include="Assets\GameLevels\AbstractLevel.cs" />
+     <Compile Include="Assets\GameLevels\Ethane.cs" />
+     <Compile Include="Assets\GameLevels\Methane.cs" />
      <Compile Include="Assets\Intro\IntroScript.cs" />
      <Compile Include="Assets\Intro\RealIntroScript.cs" />
      <Compile Include="Assets\Intro\SpaceToStart.cs" />
@@ -65,6 +69,7 @@
      <Compile Include="Assets\Levels\OxygenTutorial1.cs" />
      <Compile Include="Assets\Levels\OxygenTutorial2.cs" />
      <Compile Include="Assets\Levels\OxygenTutorial3.cs" />
+     <Compile Include="Assets\MainScreen.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -25,7 +25,7 @@ public class CarbonTutorial5 : MonoBehaviour {
 		fade = 1 - (time - finish);
 		
 		if ((fade <= 0)) {
-			Application.LoadLevel("Methane");
+			Application.LoadLevel("MainScreen");
 		}
 	}
 	

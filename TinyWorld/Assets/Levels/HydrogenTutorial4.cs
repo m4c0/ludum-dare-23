@@ -16,7 +16,10 @@ public class HydrogenTutorial4 : MonoBehaviour {
 		GUI.Label(new Rect(100, 150, 300, 50), "Your mouse wheel zooms in and out.");
 		
 		_Alphalulu(7);
-		GUI.Label(new Rect(100, 190, 300, 50), "Press SPACE when you are done.");
+		GUI.Label(new Rect(100, 190, 300, 50), "And you can click to select an atom.");
+		
+		_Alphalulu(10);
+		GUI.Label(new Rect(100, 230, 300, 50), "Press SPACE when you are done.");
 	}
 	
 	public void Update() {

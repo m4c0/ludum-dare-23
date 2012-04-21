@@ -14,9 +14,6 @@ public class RealIntroScript : MonoBehaviour {
 
 		_Alphalulu(5, 1);
 		GUI.Label(new Rect(100, 100, 200, 100), "Yes!");
-
-		_Alphalulu(9, -1);
-		GUI.Label(new Rect(100, 100, 200, 100), "Press Space to start");
 	}
 	
 	public void Start() {
@@ -33,7 +30,8 @@ public class RealIntroScript : MonoBehaviour {
 		var tt = material.color;
 		float ttt = 1;
 		
-		if (t > 10) {
+		if (t > 8) {
+			Application.LoadLevel("Hydrogen");
 			return;
 		}
 

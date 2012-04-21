@@ -36,7 +36,9 @@ public class AtomicLink : MonoBehaviour {
 				
 				Rigidbody r1 = links[j];
 				force = r.position - r1.position;
-				force = 3 * force.normalized / (force.magnitude * force.magnitude);
+				if (force.magnitude != 0) {
+					force = 3 * force.normalized / (force.magnitude * force.magnitude);
+				}
 				r.AddForce(force);
 			}
 		}

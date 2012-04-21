@@ -13,9 +13,29 @@ public class AddAtomScript : MonoBehaviour {
 	private Rect _oRect = new Rect(10, 40, 100, 25);
 	private Rect _cRect = new Rect(10, 70, 100, 25);
 	
+	private Rect _extraRect = new Rect(10, 150, 100, 25);
 	private Rect _resetRect = new Rect(10, 200, 100, 25);
 	
 	public void OnGUI() {
+		_AddAddButtons();
+		
+		if (GUI.Button(_resetRect, "Reset")) {
+			foreach (Transform t in transform) {
+				Destroy(t.gameObject);
+			}
+		}
+
+		// It's three o'clock - all night and no sleep makes jack a dull boy
+		_CoolTimeToBondJamesBond();
+	}
+	
+	private void _AddAddButtons() {
+		var s = selection.selection;
+		if (s != null) {
+			var sal = s.GetComponent<AtomicLink>();
+			if (sal.IsFull) return;
+		}
+
 		if (GUI.Button(_cRect, "Carbon")) {
 			_Create(carbon);
 		}
@@ -25,14 +45,25 @@ public class AddAtomScript : MonoBehaviour {
 		if (GUI.Button(_oRect, "Oxygen")) {
 			_Create(oxygen);
 		}
-		if (GUI.Button(_resetRect, "Reset")) {
-			foreach (Transform t in transform) {
-				Destroy(t.gameObject);
-			}
+	}
+	
+	private void _CoolTimeToBondJamesBond() {
+		var s = selection.selection;
+		if (s == null) return;
+		var sal = s.GetComponent<AtomicLink>();
+		if (sal.IsFull) return;
+		
+		var h = selection.hover;
+		if ((h == null) || (s == h)) return;
+		var hal = h.GetComponent<AtomicLink>();
+		if (hal.IsFull) return;
+		
+		if (GUI.Button(_extraRect, "Extra Bond")) {
+			sal.AddLink(h);
+			hal.AddLink(s);
 		}
 	}
 
-	private Transform go;
 	private void _Create(GameObject atom) {
 		var s = selection.selection;
 		if (s == null) {

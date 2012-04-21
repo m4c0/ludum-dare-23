@@ -47,6 +47,7 @@
      <Compile Include="Assets\AddAtomScript.cs" />
      <Compile Include="Assets\AtomSelection.cs" />
      <Compile Include="Assets\AtomicLink.cs" />
+     <Compile Include="Assets\CameraRotation.cs" />
      <Compile Include="Assets\CameraTracking.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

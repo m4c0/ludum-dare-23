@@ -5,6 +5,8 @@ public class AtomSelection : MonoBehaviour {
 	
 	public Transform selection { get; protected set; }
 	
+	public Transform hover { get; protected set; }
+	
 	private bool _Picked() { return selection != null; }
 	
 	public void PostUpdate() {
@@ -13,11 +15,7 @@ public class AtomSelection : MonoBehaviour {
 		}
 	}
 	
-	public void Update () {
-		if (!Input.GetButtonDown("Fire1")) {
-			return;
-		}
-		
+	public void Update() {
 		Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 		RaycastHit hit;
 		
@@ -25,7 +23,21 @@ public class AtomSelection : MonoBehaviour {
 			return;
 		}
 
+		Hover(hit.collider.transform);
+
+		if (!Input.GetButtonDown("Fire1")) {
+			return;
+		}
+		
 		Select(hit.collider.transform);
+	}
+	
+	private void Hover(Transform t) {
+		if ((hover != null) && (hover != selection)) {
+			(hover.GetComponent("Halo") as Behaviour).enabled = false;
+		}
+		hover = t;
+		(hover.GetComponent("Halo") as Behaviour).enabled = true;
 	}
 	
 	public void Select(Transform t) {

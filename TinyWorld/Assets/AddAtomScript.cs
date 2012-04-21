@@ -10,10 +10,12 @@ public class AddAtomScript : MonoBehaviour {
 	public GameObject carbon;
 	public GameObject hydrogen;
 	public GameObject oxygen;
+	public GameObject nitrogen;
 	
 	private Rect _hRect = new Rect(10, 10, 100, 25);
 	private Rect _oRect = new Rect(10, 40, 100, 25);
-	private Rect _cRect = new Rect(10, 70, 100, 25);
+	private Rect _nRect = new Rect(10, 70, 100, 25);
+	private Rect _cRect = new Rect(10, 100, 100, 25);
 	
 	private Rect _extraRect = new Rect(10, 150, 100, 25);
 	private Rect _resetRect = new Rect(10, 200, 100, 25);
@@ -46,6 +48,9 @@ public class AddAtomScript : MonoBehaviour {
 		}
 		if ((oxygen != null) && GUI.Button(_oRect, "Oxygen")) {
 			_Create(oxygen);
+		}
+		if ((nitrogen != null) && GUI.Button(_nRect, "Nitrogen")) {
+			_Create(nitrogen);
 		}
 	}
 	

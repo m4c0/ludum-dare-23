@@ -50,6 +50,8 @@
      <Compile Include="Assets\CameraRotation.cs" />
      <Compile Include="Assets\CameraTracking.cs" />
      <Compile Include="Assets\CameraZoom.cs" />
+     <Compile Include="Assets\Intro\IntroScript.cs" />
+     <Compile Include="Assets\Intro\RealIntroScript.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

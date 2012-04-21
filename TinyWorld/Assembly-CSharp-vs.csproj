@@ -53,6 +53,11 @@
      <Compile Include="Assets\Intro\IntroScript.cs" />
      <Compile Include="Assets\Intro\RealIntroScript.cs" />
      <Compile Include="Assets\Intro\SpaceToStart.cs" />
+     <Compile Include="Assets\Levels\CarbonTutorial1.cs" />
+     <Compile Include="Assets\Levels\CarbonTutorial2.cs" />
+     <Compile Include="Assets\Levels\CarbonTutorial3.cs" />
+     <Compile Include="Assets\Levels\CarbonTutorial4.cs" />
+     <Compile Include="Assets\Levels\CarbonTutorial5.cs" />
      <Compile Include="Assets\Levels\HydrogenTutorial1.cs" />
      <Compile Include="Assets\Levels\HydrogenTutorial2.cs" />
      <Compile Include="Assets\Levels\HydrogenTutorial3.cs" />

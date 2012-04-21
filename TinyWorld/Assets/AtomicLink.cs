@@ -6,7 +6,8 @@ public class AtomicLink : MonoBehaviour {
 	
 	public int maxLinks;
 	
-	private int linkCount = 0;
+	public int linkCount { get; protected set; }
+	
 	private Rigidbody[] links;
 	
 	private Transform me;

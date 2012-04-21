@@ -52,6 +52,10 @@
      <Compile Include="Assets\CameraZoom.cs" />
      <Compile Include="Assets\Intro\IntroScript.cs" />
      <Compile Include="Assets\Intro\RealIntroScript.cs" />
+     <Compile Include="Assets\Intro\SpaceToStart.cs" />
+     <Compile Include="Assets\Levels\HydrogenTutorial1.cs" />
+     <Compile Include="Assets\Levels\HydrogenTutorial2.cs" />
+     <Compile Include="Assets\Levels\HydrogenTutorial3.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

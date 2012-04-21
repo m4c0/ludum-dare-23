@@ -5,6 +5,8 @@ public class AddAtomScript : MonoBehaviour {
 	
 	public AtomSelection selection;
 	
+	public bool mayReset = true;
+	
 	public GameObject carbon;
 	public GameObject hydrogen;
 	public GameObject oxygen;
@@ -19,7 +21,7 @@ public class AddAtomScript : MonoBehaviour {
 	public void OnGUI() {
 		_AddAddButtons();
 		
-		if (GUI.Button(_resetRect, "Reset")) {
+		if (mayReset && GUI.Button(_resetRect, "Reset")) {
 			foreach (Transform t in transform) {
 				Destroy(t.gameObject);
 			}
@@ -36,13 +38,13 @@ public class AddAtomScript : MonoBehaviour {
 			if (sal.IsFull) return;
 		}
 
-		if (GUI.Button(_cRect, "Carbon")) {
+		if ((carbon != null) && GUI.Button(_cRect, "Carbon")) {
 			_Create(carbon);
 		}
-		if (GUI.Button(_hRect, "Hydrogen")) {
+		if ((hydrogen != null) && GUI.Button(_hRect, "Hydrogen")) {
 			_Create(hydrogen);
 		}
-		if (GUI.Button(_oRect, "Oxygen")) {
+		if ((oxygen != null) && GUI.Button(_oRect, "Oxygen")) {
 			_Create(oxygen);
 		}
 	}

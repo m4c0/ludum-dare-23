@@ -28,7 +28,6 @@ public class IntroScript : MonoBehaviour {
 		if (time > 11) fade -= tempo * Time.deltaTime;
 		if (fade < 0) fade = 0;
 		if (time > 12) {
-			gameObject.AddComponent<RealIntroScript>();
 			Destroy(this);
 		}
 	}

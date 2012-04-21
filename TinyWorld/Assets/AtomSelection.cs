@@ -3,7 +3,7 @@ using System.Collections;
 
 public class AtomSelection : MonoBehaviour {
 	
-	public Transform selection;
+	public Transform selection { get; protected set; }
 	
 	private bool _Picked() { return selection != null; }
 	
@@ -24,7 +24,15 @@ public class AtomSelection : MonoBehaviour {
 		if (!Physics.Raycast(ray, out hit)) {
 			return;
 		}
-		
-		selection = hit.collider.transform;
+
+		Select(hit.collider.transform);
+	}
+	
+	public void Select(Transform t) {
+		if (selection != null) {
+			(selection.GetComponent("Halo") as Behaviour).enabled = false;
+		}
+		selection = t;
+		(selection.GetComponent("Halo") as Behaviour).enabled = true;
 	}
 }

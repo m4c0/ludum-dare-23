@@ -29,14 +29,14 @@ public class AtomicLink : MonoBehaviour {
 		for (int i = 0; i < linkCount; i++) {
 			Rigidbody r = links[i];
 			var force = me.position - r.position;
-			r.AddForce(force);
+			r.AddForce(force * 10);
 			
 			for (int j = 0; j < linkCount; j++) {
 				if (j == i) continue;
 				
 				Rigidbody r1 = links[j];
 				force = r.position - r1.position;
-				force = force.normalized / (force.magnitude * force.magnitude);
+				force = 3 * force.normalized / (force.magnitude * force.magnitude);
 				r.AddForce(force);
 			}
 		}

@@ -36,7 +36,7 @@ public class AddAtomScript : MonoBehaviour {
 	private void _Create(GameObject atom) {
 		var s = selection.selection;
 		if (s == null) {
-			selection.selection = _Instantiate(atom);
+			selection.Select(_Instantiate(atom));
 			return;
 		}
 		

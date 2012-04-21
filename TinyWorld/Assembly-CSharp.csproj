@@ -51,6 +51,7 @@
      <Compile Include="Assets\CameraRotation.cs" />
      <Compile Include="Assets\CameraTracking.cs" />
      <Compile Include="Assets\CameraZoom.cs" />
+     <Compile Include="Assets\ForceRenderer.cs" />
      <Compile Include="Assets\GameLevels\AbstractLevel.cs" />
      <Compile Include="Assets\GameLevels\Ethane.cs" />
      <Compile Include="Assets\GameLevels\Methane.cs" />

@@ -5,6 +5,8 @@ public class AddAtomScript : MonoBehaviour {
 	
 	public AtomSelection selection;
 	
+	public GameObject forceRayPrefab;
+	
 	public bool mayReset = true;
 	
 	public GameObject carbon;
@@ -66,6 +68,7 @@ public class AddAtomScript : MonoBehaviour {
 		if (hal.IsFull) return;
 		
 		if (GUI.Button(_extraRect, "Extra Bond")) {
+			_Energyze(h, s);
 			sal.AddLink(h);
 			hal.AddLink(s);
 		}
@@ -84,6 +87,7 @@ public class AddAtomScript : MonoBehaviour {
 		Transform go = _Instantiate(atom);
 		
 		AtomicLink goal = go.GetComponent<AtomicLink>();
+		_Energyze(go, s);
 		sal.AddLink(go);
 		goal.AddLink(s);
 	}
@@ -93,5 +97,21 @@ public class AddAtomScript : MonoBehaviour {
 		res.parent = transform;
 		res.position = transform.position + Random.onUnitSphere * 2;
 		return res;
+	}
+	
+	private void _Energyze(Transform h, Transform s) {
+		float rand = 0.1f;
+		foreach (ForceRenderer f in h.GetComponentsInChildren<ForceRenderer>()) {
+			if (f.other == s) rand = 0.4f;
+		}
+		foreach (ForceRenderer f in s.GetComponentsInChildren<ForceRenderer>()) {
+			if (f.other == h) rand = 0.4f;
+		}
+		
+		var x = ((GameObject) Instantiate(forceRayPrefab)).GetComponent<ForceRenderer>();
+		x.randomness = rand;
+		x.first = h;
+		x.other = s;
+		x.transform.parent = h;
 	}
 }

@@ -54,6 +54,7 @@
      <Compile Include="Assets\CameraZoom.cs" />
      <Compile Include="Assets\ForceRenderer.cs" />
      <Compile Include="Assets\GameLevels\AbstractLevel.cs" />
+     <Compile Include="Assets\GameLevels\CarbonicAcid.cs" />
      <Compile Include="Assets\GameLevels\Ethane.cs" />
      <Compile Include="Assets\GameLevels\Methane.cs" />
      <Compile Include="Assets\GameLevels\Methylpropane.cs" />

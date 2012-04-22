@@ -25,7 +25,7 @@ public class HydrogenTutorial2 : MonoBehaviour {
 		GUI.skin = skin;
 		
 		_Alphalulu(1);
-		GUI.Label(new Rect(100, 100, 300, 50), "Since theme is not 'Alone Again', let's bind this guy with another hydrogen atom");
+		GUI.Label(new Rect(100, 100, 300, 60), "Since theme is not 'Alone Again', let's bind this guy with another hydrogen atom");
 	}
 	
 	public void Update() {

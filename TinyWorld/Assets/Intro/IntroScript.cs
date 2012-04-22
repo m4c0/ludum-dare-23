@@ -8,6 +8,7 @@ public class IntroScript : MonoBehaviour {
 	public GUISkin skin;
 	
 	private float fade = 1;
+	private bool played = false;
 	
 	public void OnGUI() {
 		GUI.skin = skin;
@@ -32,6 +33,13 @@ public class IntroScript : MonoBehaviour {
 		if (fade < 0) fade = 0;
 		if (time > 12) {
 			Destroy(this);
+		}
+	}
+	
+	public void Update() {
+		if (!played && Time.timeSinceLevelLoad > 4) {
+			audio.Play();
+			played = true;
 		}
 	}
 	

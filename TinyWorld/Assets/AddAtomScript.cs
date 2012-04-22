@@ -5,6 +5,10 @@ public class AddAtomScript : MonoBehaviour {
 	
 	public AtomSelection selection;
 	
+	public AudioClip createClip;
+	public AudioClip bondClip;
+	public AudioClip resetClip;
+	
 	public GameObject forceRayPrefab;
 	
 	public bool mayReset = true;
@@ -26,6 +30,7 @@ public class AddAtomScript : MonoBehaviour {
 		_AddAddButtons();
 		
 		if (mayReset && GUI.Button(_resetRect, "Reset")) {
+			audio.PlayOneShot(resetClip);
 			foreach (Transform t in transform) {
 				Destroy(t.gameObject);
 			}
@@ -68,6 +73,8 @@ public class AddAtomScript : MonoBehaviour {
 		if (hal.IsFull) return;
 		
 		if (GUI.Button(_extraRect, "Extra Bond")) {
+			audio.PlayOneShot(bondClip);
+			
 			_Energyze(h, s);
 			sal.AddLink(h);
 			hal.AddLink(s);
@@ -77,6 +84,7 @@ public class AddAtomScript : MonoBehaviour {
 	private void _Create(GameObject atom) {
 		var s = selection.selection;
 		if (s == null) {
+			audio.PlayOneShot(createClip);
 			selection.Select(_Instantiate(atom));
 			return;
 		}
@@ -84,6 +92,7 @@ public class AddAtomScript : MonoBehaviour {
 		AtomicLink sal = s.GetComponent<AtomicLink>();
 		if (sal.IsFull) return;
 		
+		audio.PlayOneShot(createClip);
 		Transform go = _Instantiate(atom);
 		
 		AtomicLink goal = go.GetComponent<AtomicLink>();

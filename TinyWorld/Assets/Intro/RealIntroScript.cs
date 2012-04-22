@@ -8,6 +8,8 @@ public class RealIntroScript : MonoBehaviour {
 	
 	public GUISkin skin;
 	
+	private bool played = false;
+	
 	private Material material;
 	
 	public void OnGUI() {
@@ -43,6 +45,10 @@ public class RealIntroScript : MonoBehaviour {
 			t -= 4;
 		}
 		if ((t >= 0) && (t <= 1)) {
+			if (!played) {
+				audio.Play();
+				played = true;
+			}
 			transform.localScale = Vector3.Lerp(Vector3.zero, Vector3.one, t);
 			transform.Rotate(new Vector3(0, 0, rotationAngle * Time.deltaTime));
 			
@@ -54,6 +60,7 @@ public class RealIntroScript : MonoBehaviour {
 			ff.a = 1;
 			tt.a = 0;
 			ttt = Mathf.Clamp01(t - 2);
+			played = false;
 		}
 		material.color = Vector4.Lerp(ff, tt, ttt);
 	}

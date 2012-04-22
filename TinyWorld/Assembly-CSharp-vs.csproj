@@ -59,6 +59,7 @@
      <Compile Include="Assets\GameLevels\Methane.cs" />
      <Compile Include="Assets\GameLevels\Methylpropane.cs" />
      <Compile Include="Assets\GameLevels\Propane.cs" />
+     <Compile Include="Assets\GameLevels\Thymine.cs" />
      <Compile Include="Assets\Intro\IntroScript.cs" />
      <Compile Include="Assets\Intro\RealIntroScript.cs" />
      <Compile Include="Assets\Intro\SpaceToStart.cs" />

@@ -48,6 +48,7 @@
      <Compile Include="Assets\AtomSelection.cs" />
      <Compile Include="Assets\AtomicLink.cs" />
      <Compile Include="Assets\BackToMainScreen.cs" />
+     <Compile Include="Assets\BackgroundMusic.cs" />
      <Compile Include="Assets\CameraRotation.cs" />
      <Compile Include="Assets\CameraTracking.cs" />
      <Compile Include="Assets\CameraZoom.cs" />

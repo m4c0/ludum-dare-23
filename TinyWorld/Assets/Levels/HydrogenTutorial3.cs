@@ -5,6 +5,8 @@ public class HydrogenTutorial3 : MonoBehaviour {
 	
 	private HydrogenTutorial4 next;
 	
+	public GUISkin skin;
+	
 	private float fade = 1;
 	private float time = 0;
 	
@@ -13,14 +15,16 @@ public class HydrogenTutorial3 : MonoBehaviour {
 	}
 	
 	public void OnGUI() {
+		GUI.skin = skin;
+		
 		_Alphalulu(1);
 		GUI.Label(new Rect(100, 100, 300, 50), "Now, we have a hydrogen molecule (a.k.a. 'H2')!");
 		
 		_Alphalulu(4);
-		GUI.Label(new Rect(100, 130, 300, 50), "Yeah, boring, I know. We will get into cooler molecules later.");
+		GUI.Label(new Rect(100, 140, 300, 50), "Yeah, boring, I know. We will get into cooler molecules later.");
 		
 		_Alphalulu(7);
-		GUI.Label(new Rect(100, 190, 300, 50), "But let's take some time to explain camera controls.");
+		GUI.Label(new Rect(100, 180, 300, 50), "But let's take some time to explain camera controls.");
 	}
 	
 	public void Update() {

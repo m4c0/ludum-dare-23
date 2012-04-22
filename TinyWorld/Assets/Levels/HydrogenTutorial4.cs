@@ -5,10 +5,14 @@ public class HydrogenTutorial4 : MonoBehaviour {
 	
 	public string nextLevel = "Oxygen";
 	
+	public GUISkin skin;
+	
 	private float fade = 1;
 	private float time = 0;
 	
 	public void OnGUI() {
+		GUI.skin = skin;
+		
 		_Alphalulu(1);
 		GUI.Label(new Rect(100, 100, 300, 50), "Use your cursor keys (or WASD) to rotate your camera.");
 		
@@ -16,10 +20,10 @@ public class HydrogenTutorial4 : MonoBehaviour {
 		GUI.Label(new Rect(100, 150, 300, 50), "Your mouse wheel zooms in and out.");
 		
 		_Alphalulu(7);
-		GUI.Label(new Rect(100, 190, 300, 50), "And you can click to select an atom.");
+		GUI.Label(new Rect(100, 200, 300, 50), "And you can click to select an atom.");
 		
 		_Alphalulu(10);
-		GUI.Label(new Rect(100, 230, 300, 50), "Press SPACE when you are done.");
+		GUI.Label(new Rect(100, 250, 300, 50), "Press SPACE when you are done.");
 	}
 	
 	public void Update() {

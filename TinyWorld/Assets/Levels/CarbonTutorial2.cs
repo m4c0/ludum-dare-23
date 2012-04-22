@@ -6,6 +6,8 @@ public class CarbonTutorial2 : MonoBehaviour {
 	public AddAtomScript addAtom;
 	public AtomSelection selection;
 
+	public GUISkin skin;
+	
 	public GameObject oxygen;
 	
 	private AtomicLink link;
@@ -26,6 +28,8 @@ public class CarbonTutorial2 : MonoBehaviour {
 	}
 	
 	public void OnGUI() {
+		GUI.skin = skin;
+		
 		_Alphalulu(1);
 		GUI.Label(new Rect(100, 100, 300, 50), "Carbon is a funny element.");
 
@@ -33,7 +37,7 @@ public class CarbonTutorial2 : MonoBehaviour {
 		GUI.Label(new Rect(100, 130, 300, 50), "It can be fragile as graphite or strong as diamond.");
 
 		_Alphalulu(6);
-		GUI.Label(new Rect(100, 160, 300, 50), "Oh, and life on Earth is made of it.");
+		GUI.Label(new Rect(100, 180, 300, 50), "Oh, and life on Earth is made of it.");
 	}
 	
 	private float finish = 9;

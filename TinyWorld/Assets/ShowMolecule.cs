@@ -14,7 +14,7 @@ public class ShowMolecule : MonoBehaviour {
 	private Rect target;
 	
 	public void Start() {
-		atoms.active = false;
+		atoms.gameObject.active = false;
 		texture = GetComponent<GUITexture>();
 		
 		float tw = imageWidth;

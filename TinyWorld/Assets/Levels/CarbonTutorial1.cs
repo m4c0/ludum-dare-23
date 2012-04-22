@@ -6,6 +6,8 @@ public class CarbonTutorial1 : MonoBehaviour {
 	public AddAtomScript addAtom;
 	public AtomSelection selection;
 	
+	public GUISkin skin;
+	
 	private CarbonTutorial2 next;
 	
 	private float fade = 1;
@@ -17,11 +19,13 @@ public class CarbonTutorial1 : MonoBehaviour {
 	}
 	
 	public void OnGUI() {
+		GUI.skin = skin;
+		
 		_Alphalulu(0);
-		GUI.Label(new Rect(100, 100, 300, 50), "Last part of this step-by-step tutorial (finally, huh?)");
+		GUI.Label(new Rect(100, 100, 300, 50), "Last part of this tutorial (finally, huh?)");
 		
 		_Alphalulu(3);
-		GUI.Label(new Rect(100, 140, 300, 30), "Carbon");
+		GUI.Label(new Rect(100, 150, 300, 30), "Carbon");
 	}
 	
 	private float finish = 5;

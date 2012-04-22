@@ -3,18 +3,22 @@ using System.Collections;
 
 public class CarbonTutorial5 : MonoBehaviour {
 	
+	public GUISkin skin;
+	
 	private float fade = 1;
 	private float time = 0;
 	
 	public void OnGUI() {
+		GUI.skin = skin;
+		
 		_Alphalulu(1);
-		GUI.Label(new Rect(100, 100, 300, 50), "'CO' steals oxygen. Imagine your lungs full of it. This means no oxygen to live.");
+		GUI.Label(new Rect(100, 100, 300, 60), "'CO' steals oxygen. Imagine your lungs full of it. This means no oxygen to live.");
 
 		_Alphalulu(5);
-		GUI.Label(new Rect(100, 150, 300, 50), "Now, imagine our atmosphere full of it. Yes, no more kittens.");
+		GUI.Label(new Rect(100, 160, 300, 50), "Now, imagine our atmosphere full of it. Yes, no more kittens.");
 
 		_Alphalulu(9);
-		GUI.Label(new Rect(100, 200, 300, 50), "The good news is: this tutorial is over! Let's play!");
+		GUI.Label(new Rect(100, 210, 300, 50), "The good news is: this tutorial is over! Let's play!");
 	}
 	
 	private float finish = 12;

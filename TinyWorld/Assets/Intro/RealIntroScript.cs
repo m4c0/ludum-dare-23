@@ -6,11 +6,15 @@ public class RealIntroScript : MonoBehaviour {
 	public float startTime = 12;
 	public float rotationAngle = 720;
 	
+	public GUISkin skin;
+	
 	private Material material;
 	
 	public void OnGUI() {
+		GUI.skin = skin;
+		
 		_Alphalulu(0, 3);
-		GUI.Label(new Rect(100, 100, 200, 100), "We will talk about the wonderful (tiny) world of...");
+		GUI.Label(new Rect(100, 100, 380, 100), "We will talk about the wonderful (tiny) world of...");
 
 		_Alphalulu(5, 1);
 		GUI.Label(new Rect(100, 100, 200, 100), "Yes!");

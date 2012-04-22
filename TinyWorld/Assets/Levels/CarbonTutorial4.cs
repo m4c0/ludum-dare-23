@@ -6,6 +6,8 @@ public class CarbonTutorial4 : MonoBehaviour {
 	public AddAtomScript addAtom;
 	public AtomSelection selection;
 
+	public GUISkin skin;
+	
 	public GameObject oxygen;
 	
 	private AtomicLink link;
@@ -25,14 +27,19 @@ public class CarbonTutorial4 : MonoBehaviour {
 	}
 	
 	public void OnGUI() {
+		GUI.skin = skin;
+		
 		_Alphalulu(1);
-		GUI.Label(new Rect(100, 100, 300, 50), "This is Carbon Monoxide. Something your car spits in atmosphere");
+		GUI.Label(new Rect(100, 100, 300, 60), "This is Carbon Monoxide. Something your car spits in atmosphere");
 
 		_Alphalulu(4);
-		GUI.Label(new Rect(100, 140, 300, 50), "Want to know why it's a dangerous molecule? Add another atom and another extra bond...");
+		GUI.Label(new Rect(100, 160, 300, 50), "Want to know why it's a dangerous molecule?");
+
+		_Alphalulu(7);
+		GUI.Label(new Rect(100, 200, 300, 50), "Add another atom and another extra bond!");
 	}
 	
-	private float finish = 9;
+	private float finish = 13;
 	
 	public void Update() {
 		time += Time.deltaTime;

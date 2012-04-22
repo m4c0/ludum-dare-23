@@ -6,6 +6,8 @@ public class CarbonTutorial3 : MonoBehaviour {
 	public AddAtomScript addAtom;
 	public AtomSelection selection;
 
+	public GUISkin skin;
+	
 	private AtomicLink link;
 
 	private CarbonTutorial4 next;
@@ -23,14 +25,16 @@ public class CarbonTutorial3 : MonoBehaviour {
 	}
 	
 	public void OnGUI() {
+		GUI.skin = skin;
+		
 		_Alphalulu(1);
-		GUI.Label(new Rect(100, 100, 300, 50), "Some elements can make stronger binds, like these two.");
+		GUI.Label(new Rect(100, 100, 300, 60), "Some elements can make stronger binds, like these two.");
 
 		_Alphalulu(3);
-		GUI.Label(new Rect(100, 140, 300, 50), "Hover your mouse inside oxygen and click the button that will appear");
+		GUI.Label(new Rect(100, 140, 300, 60), "Hover your mouse inside oxygen and click the button that will appear");
 
 		_Alphalulu(6);
-		GUI.Label(new Rect(100, 180, 300, 50), "Remember you can rotate your camera if needed");
+		GUI.Label(new Rect(100, 200, 300, 50), "Remember you can rotate your camera if needed");
 	}
 	
 	private float finish = 10;

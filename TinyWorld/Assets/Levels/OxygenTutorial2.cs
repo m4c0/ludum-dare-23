@@ -3,6 +3,8 @@ using System.Collections;
 
 public class OxygenTutorial2 : MonoBehaviour {
 	
+	public GUISkin skin;
+	
 	public AddAtomScript addAtom;
 	public AtomSelection selection;
 
@@ -26,17 +28,19 @@ public class OxygenTutorial2 : MonoBehaviour {
 	}
 	
 	public void OnGUI() {
+		GUI.skin = skin;
+		
 		_Alphalulu(1);
-		GUI.Label(new Rect(100, 100, 300, 50), "We could add another oxygen atom like we did before but this tutorial would take forever to finish.");
+		GUI.Label(new Rect(100, 100, 300, 50), "We could add another oxygen atom like we did before but this tutorial would take forever!");
 
 		_Alphalulu(6);
-		GUI.Label(new Rect(100, 150, 300, 50), "(BTW, that gives us the O2 molecule we breath everyday)");
+		GUI.Label(new Rect(100, 160, 300, 50), "(BTW, that gives us the O2 molecule we breath everyday)");
 
 		_Alphalulu(11);
-		GUI.Label(new Rect(100, 200, 300, 50), "Instead, let's bind two Hydrogen instead.");
+		GUI.Label(new Rect(100, 210, 300, 50), "Let's bind two Hydrogen instead.");
 	}
 	
-	private float finish = 13;
+	private float finish = 14;
 	
 	public void Update() {
 		time += Time.deltaTime;

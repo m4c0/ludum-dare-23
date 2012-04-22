@@ -15,7 +15,7 @@ public class AtomicLink : MonoBehaviour {
 	public void AddLink(Component obj) {
 		if (IsFull) return;
 		if (links == null) {
-			links = new Rigidbody[maxLinks];
+			links = new Rigidbody[4];
 		}
 		links[linkCount++] = obj.GetComponent<Rigidbody>();
 	}

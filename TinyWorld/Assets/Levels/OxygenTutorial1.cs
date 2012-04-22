@@ -6,17 +6,20 @@ public class OxygenTutorial1 : MonoBehaviour {
 	public AddAtomScript addAtom;
 	public AtomSelection selection;
 	
+	public GUISkin skin;
+	
 	private OxygenTutorial2 next;
 	
 	private float fade = 1;
 	
 	public void Start() {
 		addAtom.enabled = false;
-		
 		next = GetComponent<OxygenTutorial2>();
 	}
 	
 	public void OnGUI() {
+		GUI.skin = skin;
+		
 		_Alphalulu(0);
 		GUI.Label(new Rect(100, 100, 300, 50), "Let's play with another atom now");
 		

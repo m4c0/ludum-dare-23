@@ -6,6 +6,8 @@ public class HydrogenTutorial1 : MonoBehaviour {
 	public AddAtomScript addAtom;
 	public AtomSelection selection;
 	
+	public GUISkin skin;
+	
 	private HydrogenTutorial2 next;
 	
 	private float fade = 1;
@@ -17,11 +19,13 @@ public class HydrogenTutorial1 : MonoBehaviour {
 	}
 	
 	public void OnGUI() {
+		GUI.skin = skin;
+		
 		_Alphalulu(0);
-		GUI.Label(new Rect(100, 100, 300, 50), "We start with the smallest, simplest, and yet most common element in our universe");
+		GUI.Label(new Rect(100, 100, 300, 60), "We start with the smallest, simplest, and yet most common element in our universe");
 		
 		_Alphalulu(4);
-		GUI.Label(new Rect(100, 140, 300, 30), "Hydrogen");
+		GUI.Label(new Rect(100, 160, 300, 30), "Hydrogen");
 	}
 	
 	public void Update() {

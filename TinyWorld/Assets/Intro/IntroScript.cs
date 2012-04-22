@@ -5,24 +5,27 @@ public class IntroScript : MonoBehaviour {
 	
 	public float tempo = 3;
 	
+	public GUISkin skin;
+	
 	private float fade = 1;
 	
 	public void OnGUI() {
+		GUI.skin = skin;
+		
 		_Alphalulu(0);
-		GUI.Label(new Rect(100, 100, 200, 30), "Once upon a time...");
+		GUI.Label(new Rect(100, 100, 400, 30), "Once upon a time...");
 		
 		_Alphalulu(2);
-		GUI.Label(new Rect(100, 130, 200, 30), "...in a galaxy far, far away...");
+		GUI.Label(new Rect(100, 130, 400, 30), "...in a galaxy far, far away...");
 		
 		_Alphalulu(4);
-		GUI.Label(new Rect(100, 160, 200, 30), "erm...");
+		GUI.Label(new Rect(100, 160, 400, 30), "erm...");
 		
 		_Alphalulu(5);
-		GUI.Label(new Rect(100, 190, 300, 30), "Nope, you will not see a George Lucas's");
-		GUI.Label(new Rect(100, 210, 300, 30), "rip-off in huge space battles.");
+		GUI.Label(new Rect(100, 190, 400, 40), "Nope, you will not see a George Lucas's rip-off in huge space battles.");
 		
 		_Alphalulu(8);
-		GUI.Label(new Rect(100, 240, 300, 30), "After all, the theme is TINY worlds!");
+		GUI.Label(new Rect(100, 240, 400, 30), "After all, the theme is TINY worlds!");
 		
 		float time = Time.timeSinceLevelLoad;
 		if (time > 11) fade -= tempo * Time.deltaTime;

@@ -6,6 +6,8 @@ public class HydrogenTutorial2 : MonoBehaviour {
 	public AddAtomScript addAtom;
 	public AtomSelection selection;
 	
+	public GUISkin skin;
+	
 	private AtomicLink link;
 
 	private HydrogenTutorial3 next;
@@ -20,6 +22,8 @@ public class HydrogenTutorial2 : MonoBehaviour {
 	}
 	
 	public void OnGUI() {
+		GUI.skin = skin;
+		
 		_Alphalulu(1);
 		GUI.Label(new Rect(100, 100, 300, 50), "Since theme is not 'Alone Again', let's bind this guy with another hydrogen atom");
 	}
